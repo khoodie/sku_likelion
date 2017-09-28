@@ -1,0 +1,49 @@
+bootstrap : 프론트엔드 프레임 워크
+title 밑에 bootstrap cdn 붙여넣기 script 태그는 body 마지막 요소에 넣기
+cdnjs.com에 jquery를 치고 cdn 주소를 카피하영 body 밑에 script scr하고 주소 붙여놓기
+boot strap 밑에 css 링크를 걸어주기
+부트스트랩 쓸 준비 완료
+
+그리드 시스템
+: 디자이너들의 작업을 돕기 위해 그려놓은 상상의 가로 세로 선
+허한 발판에 갑자기 디자인을 하려하면 막막하므로 
+선을 느낌적 느낌대로 그리는 것이 아니라 규칙적으로 배치해서 만든 시스템
+디자인의 전체적인 구조를 잡고 사용자에게 전달하고자 하는 콘텐츠를 배치하는데 도움이 됨
+
+container : 컨테이너가 있어야 그리드 선이 담긴다 <그리드가 적용이 되는 범위 반드시 선언!>
+row : 한줄을 뜻함, 한줄에는 12칸의 컬럼이 들어간다 컬럼쓰기 전에 로우를 무조건 써줘야함
+column:   
+제일 중요한 점 : 앞으로 만들 콘테느에 bootstrap 클래스를 바로 붙이면 안됨
+콘텐츠는 반드시 column안에 넣어주기 row의 자식으로 넣으면 안됨
+<잘못된 예>
+<div class="container">
+<div class="row">
+<article class="col">
+<h2>제목</h2>
+<p>콘텐츠 내용</p>
+</article>
+</div>
+</div>
+
+bootstrap 배치
+1. row에 클래스를 붙여서 한번에 정렬하기
+.row.justify-content-center- 가로로 가운데 배치
+.row.justify-content-end -가로로 오른쪽 정렬
+.row.align-items-center- 세로로 가운데 배치
+.row.align-items-start -세로로 위쪽 정렬
+중요! cf.row의 flex-direction은  항상 row로 고정되어있어야 한다. flex-directiion을 바꾸지 않기
+
+2. col를 직접 이동시키는 방법
+col에 클래스를 붙여서 이동시키기
+col의 부모인 row를 통해 한번에 정렬되는 것이 아니라 col에게 클래스를 붙여서 직접 이동시키는 방법
+.push-*-n :왼쪽으로 n개 column 만큼 혼자 이동[position:relative]
+.pull-*-n : 오른쪽으로 n개 column만큼 혼자 이동[position:relative]
+.offset-*-n : 왼쪽으로 n개 column만큼 다 함께 이동[margin-left]   *은 숫자
+
+3.반응형
+break point
+반응형 웹을 만들 때, 언제 css스타일을 바꿀지를 알려주는 중단점이 필요
+@media screen and (max-width: 768px) {..}
+@media screen and (min-width: 769px) {..}
+@media screen and (min-width: 992px) {..}
+@media screen and (min-width: 1200px) {..}
